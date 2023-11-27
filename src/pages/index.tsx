@@ -55,6 +55,7 @@ const IndexPage = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // @ts-ignore
     return (
         <div className="text-light">
             <Head>
@@ -100,7 +101,14 @@ const IndexPage = () => {
                 <meta name="twitter:image" content="https://dobsond.dev/DDlogo.png" />
 
             </Head>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-S55J1C1FS8"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
+                gtag('config', 'G-S55J1C1FS8');
+            </script>
             <nav
                 style={{ top: isScrollingUp ? '0' : '-100%' }}
                 className={`z-20 text-light w-full flex items-center transition-all duration-1000 fixed py-2 px-4 md:px-8 ${isScrollingUp ? 'bg-black' : ''} ${navbarBackground}`}

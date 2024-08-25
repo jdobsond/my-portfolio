@@ -34,6 +34,7 @@ export async function getStaticPaths() {
     };
 }
 
+// @ts-ignore
 export async function getStaticProps({ params: { slug } }) {
     const markdownWithMeta = fs.readFileSync(
         path.join('pages/content', slug + '.mdx'),
